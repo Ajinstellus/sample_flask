@@ -10,7 +10,7 @@ pipeline {
                     // Clone the repository
                     checkout scm
                     
-                    // Build the Docker image on the Jenkins host
+                    // Build Docker image and run the container on Jenkins host
                     sh '''
                     docker build -t flask-app .
                     docker run -d -p 5000:5000 flask-app
@@ -20,4 +20,3 @@ pipeline {
         }
     }
 }
-
